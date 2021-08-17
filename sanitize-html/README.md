@@ -1,10 +1,10 @@
-# Inverse Relationships DatoCMS plugin
+# Sanitize Html DatoCMS plugin
 
-prototype plugin
+A simple field add on that allows you to sanitize messy Html.
 
 ## Configuration
 
-[Describe/screenshot any global/instance parameters this plugin requires]
+This plugin uses the [sanitize-html](https://github.com/apostrophecms/sanitize-html) package to perform sanitization. The [default sanitize-html settings](https://github.com/apostrophecms/sanitize-html#default-options) are passed as a global plugin setting called `Sanitizer Options`. You can change these sanitizing options in the Plugin editor.
 
 ## Development
 
