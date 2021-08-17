@@ -16,12 +16,12 @@ window.DatoCmsPlugin.init((plugin) => {
   button.textContent = 'Sanitize HTML';
   button.onclick = () => {
     // eslint-disable-next-line no-alert
-    if (window.confirm('This will remove all CSS classes and disallowed tags. Are you sure?')) {
-      const oldValue = plugin.getFieldValue(plugin.fieldPath);
-      const newValue = pretty(sanitize(oldValue, sanitizeOptions), { ocd: true });
-      console.log(newValue);
-      plugin.setFieldValue(plugin.fieldPath, newValue);
-    }
+    // if (window.confirm('This will remove all CSS classes and disallowed tags. Are you sure?')) {
+    const oldValue = plugin.getFieldValue(plugin.fieldPath);
+    const newValue = pretty(sanitize(oldValue, sanitizeOptions), { ocd: true });
+    console.log(newValue);
+    plugin.setFieldValue(plugin.fieldPath, newValue);
+    // }
   };
   container.appendChild(button);
 
