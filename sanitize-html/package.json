@@ -1,7 +1,7 @@
 {
   "name": "datocms-plugin-sanitize-html",
   "homepage": "https://github.com/mvandiest/datocms-plugins/tree/main/sanitize-html",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Sanitize messy HTML with ease.",
   "main": "index.js",
   "scripts": {

@@ -3,8 +3,8 @@ import sanitize from 'sanitize-html';
 import pretty from 'pretty';
 
 window.DatoCmsPlugin.init((plugin) => {
-  console.log('console.log(plugin.parameters);', console.log(plugin.parameters));
-  const sanitizeOptions = plugin.parameters.sanitizeHtmlOptions;
+  // console.log('console.log(plugin.parameters);', console.log(plugin.parameters));
+  const sanitizeOptions = JSON.parse(plugin.parameters.global.sanitizeHtmlOptions || {});
   plugin.startAutoResizer();
 
   const container = document.createElement('div');
@@ -15,13 +15,10 @@ window.DatoCmsPlugin.init((plugin) => {
   button.classList.add('DatoCMS-button--simple');
   button.textContent = 'Sanitize HTML';
   button.onclick = () => {
-    // eslint-disable-next-line no-alert
-    // if (window.confirm('This will remove all CSS classes and disallowed tags. Are you sure?')) {
     const oldValue = plugin.getFieldValue(plugin.fieldPath);
     const newValue = pretty(sanitize(oldValue, sanitizeOptions), { ocd: true });
-    console.log(newValue);
+    // console.log(newValue);
     plugin.setFieldValue(plugin.fieldPath, newValue);
-    // }
   };
   container.appendChild(button);
 
